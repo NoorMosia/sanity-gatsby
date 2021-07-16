@@ -1,6 +1,6 @@
 import * as styles from "./blog-post-preview-list.module.css";
 import BlogPostPreview from "./blog-post-preview";
-import { Link } from "gatsby";
+// import { Link } from "gatsby";
 import React from "react";
 
 function BlogPostPreviewGrid(props) {
@@ -15,11 +15,6 @@ function BlogPostPreviewGrid(props) {
             </li>
           ))}
       </ul>
-      {props.browseMoreHref && (
-        <div className={styles.browseMoreNav}>
-          <Link to={props.browseMoreHref}>Browse more</Link>
-        </div>
-      )}
     </div>
   );
 }
