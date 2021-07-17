@@ -1,9 +1,14 @@
 @import '../styles/custom-media.css';
 @import '../styles/custom-properties.css';
 
-.root {}
+.root {
+  max-width: 600px;
+  margin: 0 auto;
+}
 
 .title {
+  font-size: 48px;
+  margin-bottom: 2px;
   composes: responsiveTitle1 from './typography.module.css';
 }
 
@@ -64,7 +69,7 @@
 
 .publishedAt {
   composes: small from './typography.module.css';
-  margin: 2rem 0 3rem;
+  margin: 2px 0 3rem;
   color: var(--color-gray);
 }
 

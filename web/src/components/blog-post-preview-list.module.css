@@ -6,13 +6,23 @@
 }
 
 .headline {
-  font-size: var(--font-micro-size);
+  font-size: 20px;
+  padding-left: 20px;
   line-height: var(--font-micro-line-height);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin: 2rem 0;
+  margin-top: 50px;
 }
+
+.Banner {
+  background-size: cover;
+}
+
+.Banner img { 
+  width: 100%;
+}
+
 
 .grid {
   margin: 0;

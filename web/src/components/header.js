@@ -10,7 +10,7 @@ const Header = () => (
       <Link to="/">
         <img
           className={styles.imageLogo}
-          src="https://pbs.twimg.com/profile_images/1416485523120705538/t8sbUzaA_400x400.jpg"
+          src="https://res.cloudinary.com/ddqp6ml5t/image/upload/v1626558614/footy_logo_fjuguv.png"
           alt="logo"
         />
       </Link>
