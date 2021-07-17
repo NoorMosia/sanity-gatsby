@@ -1,6 +1,16 @@
 @import '../styles/custom-media.css';
 @import '../styles/custom-properties.css';
 
+
+.Banner {
+  height: 400px;
+  overflow: hidden;
+}
+
+.Banner img{
+  width: 100%
+}
+
 .content {
   background: var(--color-white);
   min-height: calc(100% - 73px - 120px);
