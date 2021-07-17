@@ -13,8 +13,15 @@
 }
 
 .strip {
-  background: rgb(47, 47, 47);
+  background: rgb(29, 29, 29);
   width: 100%;
+  height: 20px;
+  padding: 20px;
+}
+
+.leftStrip {
+  background: rgb(29, 29, 29);
+  /* width: 2%; */
   height: 20px;
   padding: 20px;
 }
