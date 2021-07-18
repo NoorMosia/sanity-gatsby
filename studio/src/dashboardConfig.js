@@ -37,7 +37,7 @@ export default {
           },
           {
             title: "Frontend",
-            value: "https://sanity-gatsby-web-xprdyfb4.netlify.app",
+            value: "https://footyza.netlify.app",
             category: "apps",
           },
         ],
