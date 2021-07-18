@@ -67,7 +67,7 @@ const BlogPostTemplate = (props) => {
         <SEO
           title={post.title || "Untitled"}
           description={toPlainText(post._rawExcerpt)}
-          image={`https://footyza.netlify.app/${post.slug.current}twitter-card.jpg`}
+          image={`https://footyza.netlify.app/${post.slug.current}/twitter-card.jpg`}
         // image={post.mainImage}
         // url={`/public/twitter-card.jpg`}
         />
