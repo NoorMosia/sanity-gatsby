@@ -78,8 +78,8 @@ const IndexPage = (props) => {
   const site = (data || {}).site;
   const postNodes = (data || {}).posts
     ? mapEdgesToNodes(data.posts)
-        .filter(filterOutDocsWithoutSlugs)
-        .filter(filterOutDocsPublishedInTheFuture)
+      .filter(filterOutDocsWithoutSlugs)
+      .filter(filterOutDocsPublishedInTheFuture)
     : [];
 
   if (!site) {
@@ -91,7 +91,7 @@ const IndexPage = (props) => {
   return (
     <Layout>
       <SEO
-        title={site.title}
+        title="footy za"
         description={site.description}
         keywords={site.keywords}
       />
