@@ -21,5 +21,25 @@ module.exports = {
         overlayDrafts: !isProd,
       },
     },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-twitter-cards`,
+            options: {
+              title: "hoshki.me",
+              separator: "|",
+              author: "Hosh'ki Tsunoda",
+              background: require.resolve("./src/images/icon.png"),
+              fontColor: "#011a27",
+              titleFontSize: 96,
+              subtitleFontSize: 60,
+              fontStyle: "monospace",
+            },
+          },
+        ],
+      },
+    },
   ],
 };

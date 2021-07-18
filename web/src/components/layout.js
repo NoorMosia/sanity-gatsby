@@ -4,8 +4,14 @@ import Header from "./header";
 import "../styles/layout.css";
 import * as styles from "./layout.module.css";
 
+import favicon from "../images/icon.png";
+import Helmet from "react-helmet";
+
 const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => (
   <>
+    <Helmet>
+      <link rel="icon" href={favicon} />
+    </Helmet>
     <Header
       siteTitle={siteTitle}
       onHideNav={onHideNav}
