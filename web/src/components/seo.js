@@ -5,7 +5,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import { imageUrlFor } from "../lib/image-url";
 import { buildImageObj } from "../lib/helpers";
 
-function SEO({ description, lang, meta, keywords, title, image }) {
+function SEO({ description, lang, meta, keywords, title, image, pathname }) {
   const { site } = useStaticQuery(detailsQuery) || {};
 
   const metaDescription = description || site.description || "";
@@ -14,12 +14,23 @@ function SEO({ description, lang, meta, keywords, title, image }) {
   const metaImage = image?.asset
     ? imageUrlFor(buildImageObj(image)).width(1200).url()
     : "";
+  const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null;
 
   return (
     <Helmet
       htmlAttributes={{ lang }}
       title={title}
       titleTemplate={title === siteTitle ? "%s" : `%s | ${siteTitle}`}
+      link={
+        canonical
+          ? [
+            {
+              rel: "canonical",
+              href: canonical,
+            },
+          ]
+          : []
+      }
       meta={[
         {
           name: "description",
@@ -59,6 +70,33 @@ function SEO({ description, lang, meta, keywords, title, image }) {
         },
       ]
         .concat(
+          metaImage
+            ? [
+              {
+                property: "og:image",
+                content: image,
+              },
+              {
+                property: "og:image:width",
+                content: metaImage.width,
+              },
+              {
+                property: "og:image:height",
+                content: metaImage.height,
+              },
+              {
+                name: "twitter:card",
+                content: "summary_large_image",
+              },
+            ]
+            : [
+              {
+                name: "twitter:card",
+                content: "summary",
+              },
+            ]
+        )
+        .concat(
           keywords && keywords.length > 0
             ? {
               name: "keywords",
@@ -83,11 +121,12 @@ SEO.propTypes = {
   meta: PropTypes.array,
   keywords: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string.isRequired,
-  image: PropTypes.shape({
+  metaImage: PropTypes.shape({
     src: PropTypes.string.isRequired,
     height: PropTypes.number.isRequired,
     width: PropTypes.number.isRequired,
   }),
+  pathname: PropTypes.string,
 };
 
 export default SEO;

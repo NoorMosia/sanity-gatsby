@@ -21,26 +21,5 @@ module.exports = {
         overlayDrafts: !isProd,
       },
     },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-twitter-cards`,
-            options: {
-              title: "anti/pattern", // website title
-              separator: "|", // default
-              author: "mosia noor",
-              background: require.resolve("./src/images/card.jpg"), // path to 1200x630px file or hex code, defaults to black (#000000)
-              fontColor: "#228B22", // defaults to white (#ffffff)
-              titleFontSize: 96, // default
-              subtitleFontSize: 60, // default
-              fontStyle: "monospace", // default
-              useFrontmatterSlug: false, // default, if true it will use the slug defined in the post frontmatter
-            },
-          },
-        ],
-      },
-    },
   ],
 };
