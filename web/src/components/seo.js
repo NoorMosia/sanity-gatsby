@@ -59,33 +59,6 @@ function SEO({ description, lang, meta, keywords, title, image }) {
         },
       ]
         .concat(
-          metaImage
-            ? [
-              {
-                property: "og:image",
-                content: image,
-              },
-              {
-                property: "og:image:width",
-                content: metaImage.width,
-              },
-              {
-                property: "og:image:height",
-                content: metaImage.height,
-              },
-              {
-                name: "twitter:card",
-                content: "summary_large_image",
-              },
-            ]
-            : [
-              {
-                name: "twitter:card",
-                content: "summary",
-              },
-            ]
-        )
-        .concat(
           keywords && keywords.length > 0
             ? {
               name: "keywords",
