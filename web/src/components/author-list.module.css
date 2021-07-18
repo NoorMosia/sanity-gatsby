@@ -19,6 +19,7 @@
 
 .listItem {
   font-size: var(--font-small-size);
+  text-transform: capitalize;
   margin: 1rem 0;
   display: flex;
   justify-content: center;
@@ -27,6 +28,7 @@
   @nest & > div:last-child {
     flex: 1;
     margin-left: 0.5rem;
+    font-size: 20px;
   }
 }
 

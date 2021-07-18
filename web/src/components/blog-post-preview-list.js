@@ -1,21 +1,20 @@
 import * as styles from "./blog-post-preview-list.module.css";
 import BlogPostPreview from "./blog-post-preview";
-// import { Link } from "gatsby";
 import React from "react";
 
 function BlogPostPreviewGrid(props) {
   return (
     <div className={styles.root}>
-      <div className={styles.Banner}>
+      {/* <div className={styles.Banner}>
         <img
           src="https://res.cloudinary.com/ddqp6ml5t/image/upload/v1626561512/banner_g7m2ny.png"
           alt="banner"
         />
-      </div>
+      </div> */}
       {props.title && <h2 className={styles.headline}>{props.title}</h2>}
       <ul className={styles.grid}>
         {props.nodes &&
-          props.nodes.map((node) => (
+          props.nodes.slice(0, 4).map((node) => (
             <li key={node.id}>
               <BlogPostPreview {...node} isInList />
             </li>

@@ -35,6 +35,8 @@
   }
 }
 
+
+
 .text {
   width: 70%;
 }
@@ -43,12 +45,6 @@
   @media (hover: hover) {
     @nest .root:hover & {
       text-decoration: underline;
-    }
-  }
-
-  @media (--media-min-medium) {
-    @nest .inList & {
-      margin-top: 0;
     }
   }
 }
@@ -67,4 +63,30 @@
   font-size: var(--font-small-size);
   line-height: var(--font-small-line-height);
   color: var(--color-gray);
+}
+
+
+@media only screen and (max-width: 768px){
+  .leadMediaThumb{
+    width: 40%
+  }
+}
+
+@media only screen and (max-width: 640px){
+  .inList {
+    flex-direction: column;
+    margin-bottom: 60px;
+  }
+  .leadMediaThumb{
+    width: 100%;
+    padding: 0;
+  }
+
+  .text {
+    width: 100%;
+  }
+
+  .title {
+    margin: 0;
+  }
 }
