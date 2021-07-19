@@ -11,7 +11,7 @@ function SEO({ description, lang, meta, keywords, title, image, pathname }) {
   const metaDescription = description || site.description || "";
   const siteTitle = site.title || "";
   const siteAuthor = site.author?.name || "";
-  const metaImage = image?.asset
+  const metaImage = image.asset
     ? imageUrlFor(buildImageObj(image)).width(1200).url()
     : "";
   const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null;
@@ -69,7 +69,7 @@ function SEO({ description, lang, meta, keywords, title, image, pathname }) {
           content: metaDescription,
         },
       ]
-        .concat(metaImage ? [
+        .concat(image ? [
           {
             property: `og:image`,
             content: metaImage
@@ -118,11 +118,11 @@ SEO.defaultProps = {
 SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
-  image: PropTypes.object,
+  image: PropTypes.string,
   meta: PropTypes.array,
   keywords: PropTypes.arrayOf(PropTypes.string),
   pathname: PropTypes.string,
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
 }
 
 export default SEO;
