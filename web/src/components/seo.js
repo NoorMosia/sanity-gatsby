@@ -16,7 +16,6 @@ function SEO({ description, lang, meta, keywords, title, image, pathname }) {
     : "";
   const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null;
 
-  console.log(image)
   return (
     <Helmet
       htmlAttributes={{ lang }}
@@ -87,6 +86,16 @@ SEO.defaultProps = {
   lang: "en",
   meta: [],
   keywords: [],
+};
+
+SEO.propTypes = {
+  description: PropTypes.string,
+  lang: PropTypes.string,
+  // image: PropTypes.object,
+  meta: PropTypes.array,
+  keywords: PropTypes.arrayOf(PropTypes.string),
+  pathname: PropTypes.string,
+  title: PropTypes.string.isRequired,
 };
 
 export default SEO;
