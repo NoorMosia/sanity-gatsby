@@ -5,7 +5,6 @@ import React from "react";
 function BlogPostPreviewGrid(props) {
   return (
     <div className={styles.root}>
-      hi
       {/* <div className={styles.Banner}>
         <img
           src="https://res.cloudinary.com/ddqp6ml5t/image/upload/v1626561512/banner_g7m2ny.png"
