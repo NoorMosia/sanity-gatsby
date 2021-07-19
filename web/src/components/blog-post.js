@@ -15,6 +15,7 @@ function BlogPost(props) {
     mainImage,
     publishedAt,
   } = props;
+
   return (
     <article className={styles.root}>
       <div className={styles.mainContent}>

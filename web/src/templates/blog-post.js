@@ -7,6 +7,10 @@ import Container from "../components/container";
 import SEO from "../components/seo";
 import { toPlainText } from "../lib/helpers";
 
+
+import { buildImageObj } from "../lib/helpers";
+import { imageUrlFor } from "../lib/image-url";
+
 export const query = graphql`
   query BlogPostTemplateQuery($id: String!) {
     post: sanityPost(id: { eq: $id }) {
@@ -60,7 +64,6 @@ export const query = graphql`
 const BlogPostTemplate = (props) => {
   const { data, errors } = props;
   const post = data && data.post;
-  console.log(post.mainImage);
   return (
     <Layout>
       {errors && <SEO title="GraphQL Error" />}
@@ -68,7 +71,7 @@ const BlogPostTemplate = (props) => {
         <SEO
           title={post.title || "Untitled"}
           description={toPlainText(post._rawExcerpt)}
-          image="https://cdn.sanity.io/images/3rw4tk2q/production/58c7afd8e55802c8b34d7ba0878908c29c5608cd-1350x759.jpg?rect=0,0,1349,759&w=1200&h=675&fit=crop&auto=format"
+          image={imageUrlFor(buildImageObj(post.mainImage)).width(1200).height(Math.floor((9 / 16) * 1200)).fit("crop").auto("format").url()}
         />
       )}
 
