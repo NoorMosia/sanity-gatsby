@@ -69,33 +69,33 @@ function SEO({ description, lang, meta, keywords, title, image, pathname }) {
           content: metaDescription,
         },
       ]
-        .concat(
-          metaImage
-            ? [
-              {
-                property: "og:image",
-                content: image,
-              },
-              {
-                property: "og:image:width",
-                content: metaImage.width,
-              },
-              {
-                property: "og:image:height",
-                content: metaImage.height,
-              },
-              {
-                name: "twitter:card",
-                content: "summary_large_image",
-              },
-            ]
-            : [
-              {
-                name: "twitter:card",
-                content: "summary",
-              },
-            ]
-        )
+        .concat(metaImage ? [
+          {
+            property: `og:image`,
+            content: metaImage
+          },
+          {
+            property: `og:image:alt`,
+            content: title,
+          },
+          {
+            property: 'og:image:width',
+            content: image.width
+          },
+          {
+            property: 'og:image:height',
+            content: image.height
+          },
+          {
+            name: `twitter:card`,
+            content: `summary_large_image`,
+          }
+        ] : [
+          {
+            name: `twitter:card`,
+            content: `summary`,
+          },
+        ])
         .concat(
           keywords && keywords.length > 0
             ? {
@@ -118,16 +118,12 @@ SEO.defaultProps = {
 SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
+  image: PropTypes.object,
   meta: PropTypes.array,
   keywords: PropTypes.arrayOf(PropTypes.string),
-  title: PropTypes.string.isRequired,
-  metaImage: PropTypes.shape({
-    src: PropTypes.string.isRequired,
-    height: PropTypes.number.isRequired,
-    width: PropTypes.number.isRequired,
-  }),
   pathname: PropTypes.string,
-};
+  title: PropTypes.string.isRequired
+}
 
 export default SEO;
 
