@@ -11,8 +11,6 @@ import GraphQLErrorList from "../components/graphql-error-list";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
 
-import Helmet from "react-helmet";
-
 export const query = graphql`
   fragment SanityImage on SanityMainImage {
     crop {

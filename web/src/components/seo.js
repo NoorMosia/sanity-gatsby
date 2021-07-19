@@ -43,7 +43,7 @@ function SEO({ description, lang, meta, keywords, title, image }) {
         },
         {
           name: "twitter:card",
-          content: "summary_large_image",
+          content: "summary",
         },
         {
           name: "twitter:creator",
@@ -56,14 +56,6 @@ function SEO({ description, lang, meta, keywords, title, image }) {
         {
           name: "twitter:description",
           content: metaDescription,
-        },
-        {
-          name: "twitter:image",
-          content: image,
-        },
-        {
-          name: "twitter:site",
-          content: "@mosia_fpl",
         },
       ]
         .concat(
