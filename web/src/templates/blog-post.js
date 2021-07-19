@@ -68,7 +68,7 @@ const BlogPostTemplate = (props) => {
         <SEO
           title={post.title || "Untitled"}
           description={toPlainText(post._rawExcerpt)}
-          image={post.mainImage}
+          image="https://cdn.sanity.io/images/3rw4tk2q/production/58c7afd8e55802c8b34d7ba0878908c29c5608cd-1350x759.jpg?rect=0,0,1349,759&w=1200&h=675&fit=crop&auto=format"
         />
       )}
 
