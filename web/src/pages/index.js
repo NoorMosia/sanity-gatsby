@@ -91,9 +91,10 @@ const IndexPage = (props) => {
   return (
     <Layout>
       <SEO
-        title="footy za"
+        title={site.title}
         description={site.description}
         keywords={site.keywords}
+        image="https://cdn.sanity.io/images/3rw4tk2q/production/58c7afd8e55802c8b34d7ba0878908c29c5608cd-1350x759.jpg?rect=0,0,1350,758&w=600&h=337&auto=format"
       />
       <Container>
         <h1 hidden>Welcome to {site.title}</h1>
