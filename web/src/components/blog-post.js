@@ -6,6 +6,8 @@ import React from "react";
 import { buildImageObj } from "../lib/helpers";
 import { imageUrlFor } from "../lib/image-url";
 
+import { Link } from "gatsby";
+
 function BlogPost(props) {
   const {
     _rawBody,
@@ -43,6 +45,9 @@ function BlogPost(props) {
         )}
         {_rawBody && <PortableText blocks={_rawBody} />}
       </div>
+      <Link to="/" className={styles.more}>
+        <button>More Blogs</button>
+      </Link>
       <aside className={styles.metaContent}>
         {authors && <AuthorList items={authors} title="Authors" />}
         {categories && (
