@@ -6,7 +6,6 @@ import Layout from "../containers/layout";
 import Container from "../components/container";
 import SEO from "../components/seo";
 import { toPlainText } from "../lib/helpers";
-import Helmet from "react-helmet";
 
 export const query = graphql`
   query BlogPostTemplateQuery($id: String!) {
@@ -63,19 +62,12 @@ const BlogPostTemplate = (props) => {
   const post = data && data.post;
   return (
     <Layout>
-      <Helmet>
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@nytimes" />
-        <meta name="twitter:creator" content="@SarahMaslinNir" />
-        <meta name="twitter:title" content="Parade of Fans for Houston’s Funeral" />
-        <meta name="twitter:description" content="NEWARK - The guest list and parade of limousines with celebrities emerging from them seemed more suited to a red carpet event in Hollywood or New York than than a gritty stretch of Sussex Avenue near the former site of the James M. Baxter Terrace public housing project here." />
-        <meta name="twitter:image" content="http://graphics8.nytimes.com/images/2012/02/19/us/19whitney-span/19whitney-span-articleLarge.jpg" />
-      </Helmet>
       {errors && <SEO title="GraphQL Error" />}
       {post && (
         <SEO
           title={post.title || "Untitled"}
           description={toPlainText(post._rawExcerpt)}
+          image={post.mainImage}
         />
       )}
 

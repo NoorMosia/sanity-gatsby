@@ -5,7 +5,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import { imageUrlFor } from "../lib/image-url";
 import { buildImageObj } from "../lib/helpers";
 
-function SEO({ description, lang, meta, keywords, title, image, pathname }) {
+function SEO({ description, lang, meta, keywords, title, image }) {
   const { site } = useStaticQuery(detailsQuery) || {};
 
   const metaDescription = description || site.description || "";
@@ -14,23 +14,12 @@ function SEO({ description, lang, meta, keywords, title, image, pathname }) {
   const metaImage = image?.asset
     ? imageUrlFor(buildImageObj(image)).width(1200).url()
     : "";
-  const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null;
 
   return (
     <Helmet
       htmlAttributes={{ lang }}
       title={title}
       titleTemplate={title === siteTitle ? "%s" : `%s | ${siteTitle}`}
-      link={
-        canonical
-          ? [
-            {
-              rel: "canonical",
-              href: canonical,
-            },
-          ]
-          : []
-      }
       meta={[
         {
           name: "description",
@@ -91,10 +80,8 @@ SEO.defaultProps = {
 SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
-  // image: PropTypes.object,
   meta: PropTypes.array,
   keywords: PropTypes.arrayOf(PropTypes.string),
-  pathname: PropTypes.string,
   title: PropTypes.string.isRequired,
 };
 
