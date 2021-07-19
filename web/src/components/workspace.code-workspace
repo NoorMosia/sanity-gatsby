@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../../../portfolio"
+		},
+		{
+			"path": "../../.."
+		}
+	],
+	"settings": {
+		"emmet.preferences": {},
+		"emmet.includeLanguages": {
+			"javascript": "javascriptreact"
+		}
+	}
+}
