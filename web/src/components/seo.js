@@ -11,11 +11,12 @@ function SEO({ description, lang, meta, keywords, title, image, pathname }) {
   const metaDescription = description || site.description || "";
   const siteTitle = site.title || "";
   const siteAuthor = site.author?.name || "";
-  const metaImage = image.asset
+  const metaImage = image?.asset
     ? imageUrlFor(buildImageObj(image)).width(1200).url()
     : "";
   const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null;
 
+  console.log(image)
   return (
     <Helmet
       htmlAttributes={{ lang }}
@@ -69,33 +70,6 @@ function SEO({ description, lang, meta, keywords, title, image, pathname }) {
           content: metaDescription,
         },
       ]
-        .concat(image ? [
-          {
-            property: `og:image`,
-            content: metaImage
-          },
-          {
-            property: `og:image:alt`,
-            content: title,
-          },
-          {
-            property: 'og:image:width',
-            content: image.width
-          },
-          {
-            property: 'og:image:height',
-            content: image.height
-          },
-          {
-            name: `twitter:card`,
-            content: `summary_large_image`,
-          }
-        ] : [
-          {
-            name: `twitter:card`,
-            content: `summary`,
-          },
-        ])
         .concat(
           keywords && keywords.length > 0
             ? {
@@ -115,27 +89,4 @@ SEO.defaultProps = {
   keywords: [],
 };
 
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  image: PropTypes.string,
-  meta: PropTypes.array,
-  keywords: PropTypes.arrayOf(PropTypes.string),
-  pathname: PropTypes.string,
-  title: PropTypes.string.isRequired,
-}
-
 export default SEO;
-
-const detailsQuery = graphql`
-  query DefaultSEOQuery {
-    site: sanitySiteSettings(_id: { eq: "siteSettings" }) {
-      title
-      description
-      keywords
-      author {
-        name
-      }
-    }
-  }
-`;
