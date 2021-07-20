@@ -39,11 +39,11 @@ function SEO({ description, lang, meta, keywords, title, image }) {
         },
         {
           property: "og:image",
-          content: metaImage,
+          content: "https://cdn.sanity.io/images/3rw4tk2q/production/c277cc856aab9f6f5a878ac31c74ad8deb8d5e76-1350x759.jpg?rect=0,0,1349,759&w=1200&h=675&fit=crop&auto=format",
         },
         {
           name: "twitter:card",
-          content: "summary",
+          content: "summary_large_image",
         },
         {
           name: "twitter:creator",

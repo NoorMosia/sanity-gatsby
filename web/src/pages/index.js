@@ -90,8 +90,8 @@ const IndexPage = (props) => {
   return (
     <Layout>
       <SEO
-        title={site.title}
-        description={site.description}
+        title="footy ZA"
+        description="Football blog by Mosia Noor-Tshepo"
         keywords={site.keywords}
       />
       <Container>
