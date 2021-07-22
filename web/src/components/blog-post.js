@@ -26,7 +26,7 @@ function BlogPost(props) {
           <div className={styles.publishedAt}>
             {differenceInDays(new Date(publishedAt), new Date()) > 3
               ? formatDistance(new Date(publishedAt), new Date())
-              : format(new Date(publishedAt), "MMMM Mo, yyyy")}
+              : format(new Date(publishedAt), "MMMM d, yyyy")}
           </div>
         )}
 
