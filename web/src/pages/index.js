@@ -8,8 +8,7 @@ import {
 import BlogPostPreviewList from "../components/blog-post-preview-list";
 import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
-// import SEO from "../components/seo";
-import SEO from "../components/seo2";
+import SEO from "../components/seo";
 import Layout from "../containers/layout";
 
 export const query = graphql`
@@ -94,6 +93,7 @@ const IndexPage = (props) => {
         title="footy ZA"
         description="Football blog by Mosia Noor-Tshepo"
         keywords={site.keywords}
+        image="https://cdn.sanity.io/images/3rw4tk2q/production/c277cc856aab9f6f5a878ac31c74ad8deb8d5e76-1350x759.jpg?rect=0,0,1349,759&w=1200&h=675&fit=crop&auto=format"
       />
       <Container>
         <h1 hidden>Welcome to {site.title}</h1>
