@@ -14,6 +14,7 @@ function SEO({ description, lang, meta, keywords, title, image }) {
   const metaImage = image?.asset
     ? imageUrlFor(buildImageObj(image)).width(1200).url()
     : "";
+  console.log(image);
 
   return (
     <Helmet
@@ -39,7 +40,7 @@ function SEO({ description, lang, meta, keywords, title, image }) {
         },
         {
           property: "og:image",
-          content: "https://cdn.sanity.io/images/3rw4tk2q/production/c277cc856aab9f6f5a878ac31c74ad8deb8d5e76-1350x759.jpg?rect=0,0,1349,759&w=1200&h=675&fit=crop&auto=format",
+          content: { image },
         },
         {
           name: "twitter:card",
@@ -56,6 +57,10 @@ function SEO({ description, lang, meta, keywords, title, image }) {
         {
           name: "twitter:description",
           content: metaDescription,
+        },
+        {
+          name: "twitter:image",
+          content: image,
         },
       ]
         .concat(
