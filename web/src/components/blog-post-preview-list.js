@@ -1,7 +1,6 @@
 import * as styles from "./blog-post-preview-list.module.css";
 import BlogPostPreview from "./blog-post-preview";
 import React from "react";
-import SEO from "../components/seo";
 
 function BlogPostPreviewGrid(props) {
   return (
