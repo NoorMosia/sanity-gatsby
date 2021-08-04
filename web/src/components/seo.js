@@ -2,8 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import { graphql, useStaticQuery } from "gatsby";
-import { imageUrlFor } from "../lib/image-url";
-import { buildImageObj } from "../lib/helpers";
 
 function SEO({ description, lang, meta, keywords, title, image }) {
   const { site } = useStaticQuery(detailsQuery) || {};
@@ -11,10 +9,6 @@ function SEO({ description, lang, meta, keywords, title, image }) {
   const metaDescription = description || site.description || "";
   const siteTitle = site.title || "";
   const siteAuthor = site.author?.name || "";
-  const metaImage = image?.asset
-    ? imageUrlFor(buildImageObj(image)).width(1200).url()
-    : "";
-  console.log(image);
 
   return (
     <Helmet
